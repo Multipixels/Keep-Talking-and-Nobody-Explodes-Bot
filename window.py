@@ -26,9 +26,6 @@ def set_appwindow(mainWindow):
         mainWindow.wm_withdraw()
         mainWindow.after(10, lambda: mainWindow.wm_deiconify())
 
-# def ttsText(content):
-#     modifiedContent = f">> {content}"
-#     speechText.insert(0, modifiedContent)
 
 class Window:
     def __init__(self):
@@ -53,13 +50,13 @@ class Window:
 
         self.window.geometry(f'{self.windowWidth}x{self.windowHeight}+{centerX}+{centerY}')
         self.window.resizable(False, False)
-        #self.window.overrideredirect(True)
+        self.window.overrideredirect(True)
         self.window.configure(bg='#252526')
-        #self.window.after(10, lambda: set_appwindow(self.window))
+        self.window.after(10, lambda: set_appwindow(self.window))
 
         self.makeWidgets()
 
-        #self.window.bind("<Map>", self.frameMapped)
+        self.window.bind("<Map>", self.frameMapped)
         self.window.geometry()
 
         self.window.mainloop()
@@ -170,7 +167,7 @@ class Window:
             self.speechText.config(state=DISABLED)
         else:
             self.speechText.config(state=NORMAL)
-            self.speechText.insert('end' , f"{event.VirtualEventData[1]}\n")
+            self.speechText.insert('end' , f"Bot heard: {event.VirtualEventData[1]}\n")
             self.speechText.config(state=DISABLED)
 
         if self.scrollbar.get()[1] == 1:
