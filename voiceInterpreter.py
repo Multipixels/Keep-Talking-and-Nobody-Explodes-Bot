@@ -4,7 +4,10 @@ import pyaudio
 from vosk import Model, KaldiRecognizer, SetLogLevel
 from time import sleep
 import json
-import os
+import moduleManager
+import speech_recognition
+
+print(speech_recognition.__version__)
 
 isActive = False
 isTalking = False
@@ -13,19 +16,16 @@ doNotStartSpeak = False
 def toggleActive():
     global isActive
     global doNotStartSpeak
-    global stop_listening
 
     if doNotStartSpeak == False:
         if isActive == False:
             isActive = True
-            # stop_listening = r.listen_in_background(m, callback)
             x = threading.Thread(target=speak, args=("I am active.",), daemon=True)
             x.start()
 
 
         elif isActive == True:
             isActive = False
-            #stop_listening(wait_for_stop=False)
             x = threading.Thread(target=speak, args=("I am not active.",), daemon=True)
             x.start()
 
@@ -78,7 +78,8 @@ def listening():
                     if recognizer.Result() != "":
                         from window import inputText
                         inputText(output['text']) 
-        
+                        speak(moduleManager.redirectInformation(output['text'])[1])
+                        
         if stream.is_active():
             stream.stop_stream()
         sleep(0.1)
@@ -86,6 +87,5 @@ def listening():
 
 SetLogLevel(-1)
 
-#model = Model(r"C:\Users\RIC\Desktop\KTANEBot\Keep-Talking-and-Nobody-Explodes-Bot\vosk-model-en-us-0.22-lgraph")
 z = threading.Thread(target=listening, daemon=True)
 z.start()

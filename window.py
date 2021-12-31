@@ -94,8 +94,6 @@ class Window:
         self.speechText.config(spacing3=4, state='disabled')
         self.speechText.pack(expand=YES, fill=BOTH)
 
-        #self.speechText.event_add("speech")
-
         self.scrollbar.config(command=self.speechText.yview)
 
         self.contentFrame = Frame(self.window, bg="#252526")
@@ -152,7 +150,7 @@ class Window:
 
     def makeVirtualEvents(self):
         for e in VirtualEvents:
-            self.window.event_add(e,'None') #Can add a trigger sequence here in place of 'None' if desired
+            self.window.event_add(e,'None')
             self.window.bind(e, self.onVirtualEvent,"%d")
 
     def FireVirtualEvent(self,vEvent,data):

@@ -2,9 +2,6 @@ from pynput import keyboard
 import voiceInterpreter
 import window
 from time import sleep
-# import pyaudio
-# import speech_recognition as sr
-# import threading
 
 def on_release(key):
     try:
