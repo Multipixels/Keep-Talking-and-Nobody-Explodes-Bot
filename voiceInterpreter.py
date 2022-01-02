@@ -5,9 +5,6 @@ from vosk import Model, KaldiRecognizer, SetLogLevel
 from time import sleep
 import json
 import moduleManager
-import speech_recognition
-
-print(speech_recognition.__version__)
 
 isActive = False
 isTalking = False
@@ -59,7 +56,7 @@ def speak(command):
         return
 
 def listening():
-    model = Model(r"vosk-model-en-us-0.22-lgraph")
+    model = Model(r"vosk-model-en-us-0.22")
     recognizer = KaldiRecognizer(model, 16000)
 
     p = pyaudio.PyAudio()
@@ -78,14 +75,16 @@ def listening():
                     if recognizer.Result() != "":
                         from window import inputText
                         inputText(output['text']) 
-                        speak(moduleManager.redirectInformation(output['text'])[1])
+                        if output['text'] != "" and output['text'] != "the":
+                            x = threading.Thread(target=speak, args=(moduleManager.redirectInformation(output['text'])[1],))
+                            x.start()
                         
         if stream.is_active():
             stream.stop_stream()
         sleep(0.1)
 
 
-SetLogLevel(-1)
+#SetLogLevel(-1)
 
 z = threading.Thread(target=listening, daemon=True)
 z.start()

@@ -1,12 +1,9 @@
-from _typeshed import NoneType
-
-
 from abc import ABC, abstractmethod
 
 class Module(ABC):
 
     @abstractmethod
-    def __init__(self):
+    def __init__(self, serial=""):
         pass
 
     @abstractmethod

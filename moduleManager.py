@@ -1,7 +1,12 @@
+from gameModules import *
+from gameModules.wiresModule import WiresModule
+
 numbers = {
     'one': '1',
     'two': '2',
+    'too': '2',
     'three': '3',
+    'for' : "4",
     'four': '4',
     'five': '5',
     'six': '6',
@@ -12,14 +17,20 @@ numbers = {
 }
 
 serialNumber = ""
-    
+
 def redirectInformation(input):
     if "serial" in input or "cereal" in input:
         return setSerial(input)
+    elif "wire" in input:
+        print(serialNumber)
+        module = WiresModule(serialNumber)
+        return module.solve(input)
     else:
         return [-1, "Invalid input, please try again"]
 
 def setSerial(input):
+    global serialNumber
+
     tempSerial = ""
     speechOutput = ""
 
@@ -32,9 +43,9 @@ def setSerial(input):
 
     for word in modifiedInput:
         if word in numbers:
-            tempSerial += numbers[word]
+            tempSerial += numbers[word] + " "
         else:
-            tempSerial += word[0]
+            tempSerial += word[0] + " "
 
     serialNumber = tempSerial
     
