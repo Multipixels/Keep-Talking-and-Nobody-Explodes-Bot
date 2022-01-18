@@ -1,23 +1,25 @@
 from module import Module
 
-class WiresModule(Module):
-    def __init__(self, serial=""):
-        self.colors = ['red', 'yellow', 'blue', 'black', 'white']
-        self.numberOfWires = 0
-        self.orderOfWires = []
-        self.serial = serial
+descriptionWords = ["simple wires", "wires", "wire"]
 
+class WiresModule(Module):
+    def __init__(self, serial="", labels={}, batteries=0, strikes=0):
+        self.colors = ['red', 'yellow', 'blue', 'black', 'white']
+
+        self.orderOfWires = []
+        self.numberOfWires = 0
         self.numberOfRed = 0
         self.numberOfBlue = 0
         self.numberOfYellow = 0
         self.numberOfBlack = 0
         self.numberOfWhite = 0
-        print(self.__isSerialOdd())
+
+        self.serial = serial
 
     def logic(self):
         speechOutput = ""
 
-        if self.serial == "":
+        if self.serial == "" and self.numberOfWires != 3:
             speechOutput = "I need the serial number."
             return [-1, speechOutput]
 
