@@ -1,8 +1,8 @@
 from module import Module
 
-descriptionWords = ["simon"]
+descriptionWords = ["wire sequence", "sequence wires", "sequence"]
 
-class SimonSaysModule(Module):
+class WireSequenceModule(Module):
     def __init__(self, serial="", labels={}, batteries=-0, strikes=0):
         pass
 

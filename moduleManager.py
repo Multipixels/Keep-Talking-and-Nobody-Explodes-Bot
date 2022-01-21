@@ -11,6 +11,7 @@ moduleDescriptions = {
 numbers = {
     'one': '1',
     'two': '2',
+    'to': '2',
     'too': '2',
     'three': '3',
     'for' : "4",

@@ -59,6 +59,9 @@ def listening():
     model = Model(r"vosk-model-en-us-0.22")
     recognizer = KaldiRecognizer(model, 16000)
 
+    from window import inputText
+    inputText("System")
+
     p = pyaudio.PyAudio()
     stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)
 
@@ -73,7 +76,6 @@ def listening():
                     output = json.loads(recognizer.Result())
                     print(output['text'])
                     if recognizer.Result() != "":
-                        from window import inputText
                         inputText(output['text']) 
                         if output['text'] != "" and output['text'] != "the":
                             x = threading.Thread(target=speak, args=(moduleManager.redirectInformation(output['text'])[1],))
