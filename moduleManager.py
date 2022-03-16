@@ -104,7 +104,7 @@ def setBatteries(input):
 
     for word in modifiedInput:
         if word in numbers:
-            numberOfBatteries = numbers[word]
+            numberOfBatteries = int(numbers[word])
             speechOutput = f"There are {numberOfBatteries} batteries."
             return [0, speechOutput]
 
@@ -120,7 +120,7 @@ def setStrikes(input):
 
     for word in modifiedInput:
         if word in numbers:
-            numberOfStrikes = numbers[word]
+            numberOfStrikes = int(numbers[word])
             speechOutput = f"There are {numberOfStrikes} strikes."
             return [0, speechOutput]
 

@@ -42,6 +42,7 @@ def speak(command):
         return
     elif isTalking == False:
         from window import ttsText
+
         ttsText(command)
         isTalking = True
         doNotStartSpeak = False
@@ -60,7 +61,7 @@ def listening():
     recognizer = KaldiRecognizer(model, 16000)
 
     from window import inputText
-    inputText("System")
+    inputText("Ready to listen!")
 
     p = pyaudio.PyAudio()
     stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)
@@ -76,7 +77,8 @@ def listening():
                     output = json.loads(recognizer.Result())
                     print(output['text'])
                     if recognizer.Result() != "":
-                        inputText(output['text']) 
+                        if output['text'] != "" and output['text'] != " " and output['text'] != "the":
+                            inputText(output['text']) 
                         if output['text'] != "" and output['text'] != "the":
                             x = threading.Thread(target=speak, args=(moduleManager.redirectInformation(output['text'])[1],))
                             x.start()
