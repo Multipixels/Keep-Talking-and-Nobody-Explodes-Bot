@@ -3,7 +3,7 @@ from module import Module
 descriptionWords = ["simple wires", "wires", "wire"]
 
 class WiresModule(Module):
-    def __init__(self, serial="", labels={}, batteries=0, strikes=0):
+    def __init__(self, widgets):
         self.colors = ['red', 'yellow', 'blue', 'black', 'white']
 
         self.orderOfWires = []
@@ -14,7 +14,7 @@ class WiresModule(Module):
         self.numberOfBlack = 0
         self.numberOfWhite = 0
 
-        self.serial = serial
+        self.serial = widgets.getSerial()
 
     def logic(self):
         speechOutput = ""
@@ -75,7 +75,7 @@ class WiresModule(Module):
 
     def __isSerialOdd(self):
         try:
-            digit = int(self.serial[-2])
+            digit = int(self.serial[-1])
             print(digit)
             if digit % 2 == 1:
                 return True

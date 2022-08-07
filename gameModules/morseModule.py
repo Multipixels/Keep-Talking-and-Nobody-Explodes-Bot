@@ -1,9 +1,9 @@
 from module import Module
 
-descriptionWords = ["morse"]
+descriptionWords = ["morse", "binary"]
 
 class morseModule(Module):
-    def __init__(self, serial="", labels={}, batteries=-0, strikes=0):
+    def __init__(self, widgets):
         self.words = {
             'dot': '.',
             'short': '.',
@@ -46,7 +46,7 @@ class morseModule(Module):
                 speechOutput += "3 dot 5 4 5."
             elif self.pattern[1] == '.-.' and self.pattern[2] == '.':
                 speechOutput += "3 dot 5 7 2."
-            elif self.pattern[1] == '.-.' and self.pattern[2] == '.':
+            elif self.pattern[1] == '.-.' and self.pattern[2] == '..':
                 speechOutput += "3 dot 5 7 5."
             elif self.pattern[1] == '-' and self.pattern[2] == '.':
                 speechOutput += "3 dot 5 8 2."

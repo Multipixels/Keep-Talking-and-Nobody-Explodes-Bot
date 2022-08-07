@@ -3,7 +3,7 @@ from module import Module
 descriptionWords = ["wire sequence", "sequence wires", "sequence"]
 
 class WireSequenceModule(Module):
-    def __init__(self, serial="", labels={}, batteries=-0, strikes=0):
+    def __init__(self, widgets):
         pass
 
     def logic(self):

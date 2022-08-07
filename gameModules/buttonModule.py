@@ -3,7 +3,7 @@ from module import Module
 descriptionWords = ["simple button", "button"]
 
 class ButtonModule(Module):
-    def __init__(self, serial="", labels={}, batteries=0, strikes=0):
+    def __init__(self, widgets):
         self.colors = ['red', 'yellow', 'blue', 'white', 'black']
         self.texts = ['press', 'hold', 'detonate', 'abort']
 
@@ -11,8 +11,8 @@ class ButtonModule(Module):
         self.buttonText = ""
         self.buttonLight = ""
 
-        self.labels = labels
-        self.batteries = batteries
+        self.labels = widgets.getLabels()
+        self.batteries = widgets.getBatteries()
 
     def logic(self):
 

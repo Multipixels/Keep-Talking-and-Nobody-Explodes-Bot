@@ -3,13 +3,13 @@ from module import Module
 descriptionWords = ["simon", "salmon"]
 
 class SimonSaysModule(Module):
-    def __init__(self, serial="", labels={}, batteries=0, strikes=0):
+    def __init__(self, widgets):
         self.colors = ['red', 'yellow', 'blue', 'green']
 
         self.orderOfColors = []
 
-        self.strikes = int(strikes)
-        self.serial = serial
+        self.strikes = widgets.getStrikes()
+        self.serial = widgets.getSerial()
         self.vowel = False
 
     def logic(self):

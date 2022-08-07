@@ -1,15 +1,15 @@
 from abc import ABC, abstractmethod
 
-class Module(ABC):
+class Widget(ABC):
 
     @abstractmethod
-    def __init__(self, widget):
+    def __init__(self):
         pass
 
     @abstractmethod
-    def logic(self):
+    def getValue(self):
         pass
 
     @abstractmethod
-    def solve(self, input):
+    def setValue(self):
         pass

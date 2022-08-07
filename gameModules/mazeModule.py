@@ -3,7 +3,7 @@ from module import Module
 descriptionWords = ["maze"]
 
 class MazeModule(Module):
-    def __init__(self, serial="", labels={}, batteries=-0, strikes=0):
+    def __init__(self, widgets):
         pass
 
     def logic(self):
