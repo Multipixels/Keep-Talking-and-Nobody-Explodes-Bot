@@ -149,7 +149,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Finish Vanilla Modules
-    - [ ] Complicated Wires
+    - [X] Complicated Wires
     - [ ] Keypad
     - [ ] Knob
     - [ ] Maze
@@ -160,7 +160,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [x] The Button
     - [ ] Who's On First
     - [ ] Wire Sequence
-    - [ ] Wires
+    - [X] Wires
 - [ ] Modded Modules (?)
 - [ ] Settings Menu
     - [ ] Keyword activation
