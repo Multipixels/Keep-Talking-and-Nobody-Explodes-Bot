@@ -152,10 +152,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [X] Complicated Wires
     - [ ] Keypad
     - [ ] Knob
-    - [ ] Maze
+    - [X] Maze
     - [ ] Memory
     - [x] Morse Code
-    - [ ] Password
+    - [X] Password
     - [x] Simon Says
     - [x] The Button
     - [ ] Who's On First
