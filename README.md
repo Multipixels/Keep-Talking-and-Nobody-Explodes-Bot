@@ -150,8 +150,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Finish Vanilla Modules
     - [X] Complicated Wires
-    - [ ] Keypad
-    - [ ] Knob
+    - [X] Keypad
+      - [ ] Customizable Symbols (Settings)
+    - [?] Knob
     - [X] Maze
     - [ ] Memory
     - [x] Morse Code
@@ -167,6 +168,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Push-to-talk
     - [ ] Toggle mute
     - [x] Voice activation
+    - [ ] Module settings
 
 <!-- See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues). -->
 
