@@ -1,6 +1,6 @@
 from widget import Widget
 
-descriptionWords = ["p s two port"]
+descriptionWords = ["p s two port", "ps two port"]
 tags = ["port"]
 
 widgetName = "PS2 Port"
