@@ -1,6 +1,7 @@
 from module import Module
 
 descriptionWords = ["simple button", "button"]
+isPersistent = False
 
 class ButtonModule(Module):
     def __init__(self, widgets):

@@ -2,6 +2,7 @@ from turtle import speed
 from module import Module
 
 descriptionWords = ["password"]
+isPersistent = False
 
 class passwordModule(Module):
     def __init__(self, widgets):

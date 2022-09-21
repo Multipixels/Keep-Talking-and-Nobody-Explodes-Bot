@@ -1,6 +1,7 @@
 from module import Module
 
 descriptionWords = ["morse", "binary"]
+isPersistent = False
 
 class morseModule(Module):
     def __init__(self, widgets):

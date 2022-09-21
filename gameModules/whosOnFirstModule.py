@@ -1,6 +1,7 @@
 from module import Module
 
 descriptionWords = ["who's on first", "whose on first", "whos on first"]
+isPersistent = False
 
 class WhosOnFirstModule(Module):
     def __init__(self, widgets):

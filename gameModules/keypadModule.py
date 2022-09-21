@@ -1,6 +1,7 @@
 from module import Module
 
 descriptionWords = ["keypad", "symbols"]
+isPersistent = False
 
 class KeypadModule(Module):
     def __init__(self, widgets):

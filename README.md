@@ -155,11 +155,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [?] Knob
     - [X] Maze
     - [ ] Memory
-    - [x] Morse Code
+    - [X] Morse Code
     - [X] Password
-    - [x] Simon Says
-    - [x] The Button
-    - [ ] Who's On First
+    - [X] Simon Says
+    - [X] The Button
+    - [X] Who's On First
+      - [ ] Customizable Sayings (Settings)
     - [ ] Wire Sequence
     - [X] Wires
 - [ ] Modded Modules (?)
