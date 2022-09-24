@@ -1,9 +1,9 @@
 from module import Module
 
-descriptionWords = ["wire sequence", "sequence wires", "sequence"]
+descriptionWords = ["memory"]
 isPersistent = True
 
-class WireSequenceModule(Module):
+class MemoryModule(Module):
     def __init__(self, widgets):
         pass
 
