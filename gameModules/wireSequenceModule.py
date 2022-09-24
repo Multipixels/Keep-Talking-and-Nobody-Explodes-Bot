@@ -40,10 +40,12 @@ class WireSequenceModule(Module):
         numberOfBlue = 0
         numberOfBlack = 0
 
-        for i in range(self.currentStage - 1):
+        for i in range(self.currentStage):
             numberOfRed += self.stages[i].count("red")
             numberOfBlue += self.stages[i].count("blue")
             numberOfBlack += self.stages[i].count("black")
+
+        print(numberOfRed, numberOfBlue, numberOfBlack)
 
         for i in range(0, len(self.stages[self.currentStage]), 2):
             color = self.stages[self.currentStage][i]
@@ -77,7 +79,6 @@ class WireSequenceModule(Module):
         self.stages[self.currentStage] = []
 
         for word in rawInput.split():
-            print(f"WA {word}")
             if nextLetter:
                 if word[0].upper() in ["A", "B", "C"]:
                     self.stages[self.currentStage].append(word[0].upper())
@@ -85,14 +86,11 @@ class WireSequenceModule(Module):
                 else: return [-1, "Didn't hear you correctly. Try again."]
 
             if word in self.colors:
-                print(word)
                 self.stages[self.currentStage].append(word)
                 nextLetter = True
 
         output = self.logic()
         return output
 
-
     def reset(self, widgets):
-        print("test")
         self.__init__(widgets)
