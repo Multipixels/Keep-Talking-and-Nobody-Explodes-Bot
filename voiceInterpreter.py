@@ -5,6 +5,7 @@ from vosk import Model, KaldiRecognizer, SetLogLevel
 from time import sleep
 import json
 import moduleManager
+from os.path import exists
 
 isActive = False
 isTalking = False
@@ -57,7 +58,12 @@ def speak(command):
         return
 
 def listening():
-    model = Model(r"vosk-model-en-us-0.22")
+    if exists("vosk-model-en-us-0.22"):
+        model = Model(r"vosk-model-en-us-0.22")
+    elif exists("vosk-model-en-us-0.22-lgraph"):
+        model = Model(r"vosk-model-en-us-0.22-lgraph")
+    else:
+        raise Exception("Error, can't find model")
     recognizer = KaldiRecognizer(model, 16000)
 
     from window import inputText
