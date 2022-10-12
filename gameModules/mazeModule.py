@@ -202,8 +202,8 @@ class MazeModule(Module):
             return [-1, speechOutput]
 
         markerPosition = (self.positions[0], self.positions[1])
-        targetPosition = (self.positions[-2], self.positions[-1])
-        playerPosition = (self.positions[-4], self.positions[-3])
+        targetPosition = (self.positions[-4], self.positions[-3])
+        playerPosition = (self.positions[-2], self.positions[-1])
 
         self.currentMaze = -1
 

@@ -1,6 +1,6 @@
 from module import Module
 
-descriptionWords = ["who's on first", "whose on first", "whos on first"]
+descriptionWords = ["who's on first", "whose on first", "whos on first", "who is on first"]
 isPersistent = False
 
 class WhosOnFirstModule(Module):
@@ -28,16 +28,18 @@ class WhosOnFirstModule(Module):
             "first": "first",
             "hold on": "hold on",
             "follow the lead": "lead",
+            "follow the leed": "lead",
+            "follow the led": "lead",
             "l e a d": "lead",
             "pencil": "lead",
             "l e d": "led",
             "light": "led",
             "tv": "led",
             "leed": "leed",
+            "l e e d": "leed",
             "l e d with two e": "leed",
             "lead with two e": "leed",
-            "no ": "no",
-            " no": "no",
+            " no ": "no",   
             "nothing word": "nothing",
             "okay": "okay",
             "ok ": "okay",
@@ -53,6 +55,7 @@ class WhosOnFirstModule(Module):
             "reed rod": "reed",
             "read rod": "reed",
             "says": "says",
+            "s e e": "see",
             "see word": "see",
             "c word": "see",
             "sea word": "see",
@@ -64,10 +67,10 @@ class WhosOnFirstModule(Module):
             "there place": "there",
             "they're place": "there",
             "they are place": "there",
-            "their seperate": "they are",
-            "there seperate": "they are",
-            "they're seperate": "they are",
-            "they are seperate": "they are",
+            "their separate": "they are",
+            "there separate": "they are",
+            "they're separate": "they are",
+            "they are separate": "they are",
             "their conjunction": "they're",
             "there conjunction": "they're",
             "they're conjunction": "they're",
@@ -81,15 +84,15 @@ class WhosOnFirstModule(Module):
             "you are later": "ur",
             "u are later": "ur",
             "yes": "yes",
-            "you are seperate": "you are",
-            "you're seperate": "you are",
-            "your seperate": "you are",
+            "you are separate": "you are",
+            "you're separate": "you are",
+            "your separate": "you are",
             "you are conjugate": "you're",
-            "you're conjugate": "you are",
-            "your conjugate": "you are",
-            "you are possessive": "you're",
-            "you're possessive": "you are",
-            "your possessive": "you are",
+            "you're conjugate": "you're",
+            "your conjugate": "you're",
+            "you are possessive": "your",
+            "you're possessive": "your",
+            "your possessive": "your",
             "you word": "you",
             "you ": "you",
             " you": "you",
@@ -97,7 +100,7 @@ class WhosOnFirstModule(Module):
         }
 
         self.second = {
-            "blank": "blank",
+            "blank": "blank word",
             "b l a n k": "blank",
             "blank": "blank",
             "done": "done",
@@ -107,8 +110,7 @@ class WhosOnFirstModule(Module):
             "like": "like",
             "middle": "middle",
             "next": "next",
-            "no ": "no",
-            " no": "no",
+            " no ": "no",
             "nothing": "nothing",
             "ok": "okay",
             "press": "press",
@@ -127,15 +129,15 @@ class WhosOnFirstModule(Module):
             "what": "what",
             "what question": "what?",
             "yes": "yes",
-            "you are seperate": "you are",
-            "you're seperate": "you are",
-            "your seperate": "you are",
-            "you are conjugate": "you're",
-            "you're conjugate": "you are",
-            "your conjugate": "you are",
-            "you are possessive": "you're",
-            "you're possessive": "you are",
-            "your possessive": "you are",
+            "you are separate": "you are",
+            "you're separate": "you are",
+            "your separate": "you are",
+            "you are conjunction": "you're",
+            "you're conjunction": "you're",
+            "your conjunction": "you're",
+            "you are possessive": "your",
+            "you're possessive": "your",
+            "your possessive": "your",
             "you word": "you",
             "you": "you",
             "u ": "you"
@@ -235,8 +237,11 @@ class WhosOnFirstModule(Module):
             self.step = 2
             for key in self.second:
                 if key in rawInput:
-                    self.input = self.second[key]
-                    break
+                    if self.second[key] == "first" and firstCounter == 0:
+                        firstCounter += 1
+                    else:
+                        self.input = self.second[key]
+                        break
         else:
             self.step = 1
             for key in self.first:

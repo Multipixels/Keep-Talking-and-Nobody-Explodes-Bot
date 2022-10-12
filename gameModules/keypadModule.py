@@ -119,7 +119,7 @@ class KeypadModule(Module):
 
     def solve(self, rawInput):
         for key in self.symbols:
-            if key in rawInput:
+            if key in rawInput and self.symbols[key] not in self.inputKeypad:
                 self.inputKeypad.append(self.symbols[key])
                 self.inputKeypadNames.append(key)
 

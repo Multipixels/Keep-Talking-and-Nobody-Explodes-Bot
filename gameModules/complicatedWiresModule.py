@@ -1,6 +1,6 @@
 from module import Module
 
-descriptionWords = ["complicated wires"]
+descriptionWords = ["complicated wires", "complex wires"]
 isPersistent = False
 
 class ComplicatedWiresModule(Module):
