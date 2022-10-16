@@ -1,29 +1,9 @@
-<div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!--[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+[![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
--->
+<!-- [![MIT License][license-shield]][license-url]
+     [![Forks][forks-shield]][forks-url] -->
 
 
 
@@ -101,97 +81,79 @@ A high-school project made to help users play [Keep Talking and Nobody Explodes]
 
 
 <!-- GETTING STARTED -->
-<!-- ## Getting Started
+## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Currently tested for Windows only.
+Currently tested for Python 3.9 only.
+
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* pip
   ```sh
-  npm install npm@latest -g
-  ``` -->
+  pip install --upgrade pip
+  ```
 
-<!--### Installation
+### Installation
 
- 1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot.git
    ```
-3. Install NPM packages
+2. Install Python package dependencies
    ```sh
-   npm install
+   pip install pynput
+   pip install pyttsx3
+   pip install pyaudio
+   pip install vosk
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Install a [Vosk Audio Recognition Model](https://alphacephei.com/vosk/models). Put it in the root folder of the repo.
+   - The only two models supported are the following.
+     - [vosk-model-en-us-0.22-lgraph](vosk-model-en-us-0.22-lgraph), Faster bootup, but provides less accuracy. If having trouble, try using the next model.
+     - [vosk-model-en-us-0.22](https://alphacephei.com/vosk/models/vosk-model-en-us-0.22.zip), Provides more accuracy, but initial bootup takes longer and takes up much more space.
 
-<p align="right">(<a href="#top">back to top</a>)</p> -->
-
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
-<!-- ## Usage
+## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Run the main.py file. If installation was done correctly, a window will popup. Wait until it shows "Bot heard: Ready to Listen!"
+When you're ready to start, press the "Activate" button below. Press it again if you want to stop.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_Full tutorials will be found [here](https://www.youtube.com/playlist?list=PLll7a_aZOiE63zbNZDA6jSA71DDJmMIG4)._
 
-<p align="right">(<a href="#top">back to top</a>)</p> -->
+_For more in-depth details on specific modules and information, please refer to the [Wiki](https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/wiki)._
 
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Finish Vanilla Modules
+- [X] Vanilla Modules
     - [X] Complicated Wires
     - [X] Keypad
-      - [ ] Customizable Symbols (Settings)
-    - [?] Knob
     - [X] Maze
-    - [ ] Memory
+    - [X] Memory
     - [X] Morse Code
     - [X] Password
     - [X] Simon Says
     - [X] The Button
     - [X] Who's On First
-      - [ ] Customizable Sayings (Settings)
-    - [ ] Wire Sequence
+    - [X] Wire Sequence
     - [X] Wires
-- [ ] Modded Modules (?)
+- [ ] Vanilla Needy Modules
+    - [ ] Knob
 - [ ] Settings Menu
-    - [ ] Keyword activation
-    - [ ] Push-to-talk
-    - [ ] Toggle mute
-    - [x] Voice activation
-    - [ ] Module settings
+    - [ ] **C++ Port**
+    - [X] Voice activation
+    - [ ] Activation by keyword ("Hey Bot...")
+    - [ ] Push-to-talk/Toggle Options
+    - [ ] Module Settings
 
 <!-- See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues). -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-<!-- ## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p> -->
 
 
 
@@ -215,29 +177,18 @@ Project Link: [https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-B
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-<!--## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>-->
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot.svg?style=for-the-badge
+[contributors-url]: https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot.svg?style=for-the-badge
+[forks-url]: https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/network/members
+[stars-shield]: https://img.shields.io/github/stars/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot.svg?style=for-the-badge
+[stars-url]: https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot.svg?style=for-the-badge
+[issues-url]: https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/issues
+<!-- [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge -->
+<!-- [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/richard-motorgeanu/
 [product-screenshot]: images/screenshot.png
