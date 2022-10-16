@@ -18,9 +18,8 @@
 
   <p align="center">
     A KTaNE assistant for when you're alone.
-    <!-- <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br /> -->
+    <br />
+    <a href="https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://youtu.be/qaytGFiAcFE">View Video Demo</a>
     ·
