@@ -109,8 +109,8 @@ To get a local copy up and running follow these steps.
    ```
 3. Install a [Vosk Audio Recognition Model](https://alphacephei.com/vosk/models). Put it in the root folder of the repo.
    - The only two models supported are the following.
-     - [vosk-model-en-us-0.22-lgraph](vosk-model-en-us-0.22-lgraph), Faster bootup, but provides less accuracy. If having trouble, try using the next model.
-     - [vosk-model-en-us-0.22](https://alphacephei.com/vosk/models/vosk-model-en-us-0.22.zip), Provides more accuracy, but initial bootup takes longer and takes up much more space.
+     - [vosk-model-en-us-0.22-lgraph](https://alphacephei.com/vosk/models#:~:text=vosk%2Dmodel%2Den%2Dus%2D0.22%2Dlgraph), Faster bootup, but provides less accuracy. If having trouble, try using the next model.
+     - [vosk-model-en-us-0.22](https://alphacephei.com/vosk/models#:~:text=Apache%202.0-,vosk%2Dmodel%2Den%2Dus%2D0.22,-1.8G), Provides more accuracy, but initial bootup takes longer and takes up much more space.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
