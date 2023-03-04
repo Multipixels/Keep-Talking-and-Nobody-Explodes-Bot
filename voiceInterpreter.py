@@ -11,9 +11,17 @@ isActive = False
 isTalking = False
 doNotStartSpeak = False
 
+loaded = False
+
 def toggleActive():
     global isActive
     global doNotStartSpeak
+    global loaded
+
+    if not loaded:
+        from window import ttsText
+        ttsText("Voice module is still loading, please wait.")
+        return
 
     if doNotStartSpeak == False:
         if isActive == False:
@@ -58,6 +66,8 @@ def speak(command):
         return
 
 def listening():
+    global loaded
+
     if exists("vosk-model-en-us-0.22"):
         model = Model(r"vosk-model-en-us-0.22")
     elif exists("vosk-model-en-us-0.22-lgraph"):
@@ -68,6 +78,7 @@ def listening():
 
     from window import inputText
     inputText("Ready to listen!")
+    loaded = True
 
     p = pyaudio.PyAudio()
     stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)
