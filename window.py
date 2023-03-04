@@ -91,6 +91,7 @@ class Window:
         self.scrollbar.pack(side=RIGHT, fill=Y)
 
         self.speechText = Text(self.textFrame, wrap=WORD, border=0, background="#252526", foreground="white", yscrollcommand=self.scrollbar.set, font=("Arial", 14))
+        self.speechText.insert('end' , f">> Loading voice modules, please wait.\n")
         self.speechText.config(spacing3=4, state='disabled')
         self.speechText.pack(expand=YES, fill=BOTH)
 
