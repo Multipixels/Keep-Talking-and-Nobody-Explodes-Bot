@@ -104,6 +104,10 @@ class MemoryModule(Module):
         if "next" in rawInput:
             self.currentStage += 1
 
+        if self.currentStage > 4:
+            self.currentStage -= 1
+            return [-1, "Cannot enter a 6th stage, resetting back to 5. Try again."]
+
         self.stages[self.currentStage] = []
 
         for word in rawInput.split():
