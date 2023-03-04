@@ -28,7 +28,7 @@ class WireSequenceModule(Module):
             return [-1, speechOutput]
 
         if len(self.stages[self.currentStage]) > 6 or len(self.stages[self.currentStage]) % 2 != 0:
-            speechOutput = f"I didn't hear that correctly, please try again. {self.stages}"
+            speechOutput = f"I didn't hear that correctly, please try again."
             return [-1, speechOutput]
 
         for word in self.stages[self.currentStage]:
@@ -75,6 +75,10 @@ class WireSequenceModule(Module):
         if "next" in rawInput:
             self.currentStage += 1
 
+        if self.currentStage > 3:
+            self.currentStage -= 1
+            return [-1, "Cannot enter a 5th stage, resetting back to 4. Try again."]
+
         nextLetter = False
         self.stages[self.currentStage] = []
 
@@ -83,13 +87,19 @@ class WireSequenceModule(Module):
                 if word[0].upper() in ["A", "B", "C"]:
                     self.stages[self.currentStage].append(word[0].upper())
                     nextLetter = False
-                else: return [-1, "Didn't hear you correctly. Try again."]
+                else: 
+                    if "next" in rawInput: self.currentStage -= 1
+                    return [-1, "Didn't hear you correctly. Try again."]
 
             if word in self.colors:
                 self.stages[self.currentStage].append(word)
                 nextLetter = True
 
         output = self.logic()
+
+        if output[0] == -1:
+            self.currentStage -= 1
+
         return output
 
     def reset(self, widgets):
