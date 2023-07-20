@@ -107,7 +107,8 @@ To get a local copy up and running follow these steps.
    pip install pyaudio
    pip install vosk
    ```
-3. Install a [Vosk Audio Recognition Model](https://alphacephei.com/vosk/models). Put it in the root folder of the repo.
+3. Download a [Vosk Audio Recognition Model](https://alphacephei.com/vosk/models). Extract the folder from the zip file and put the folder in the root directory of the repository as shown below.  
+   ![image](https://github.com/Multipixels/Keep-Talking-and-Nobody-Explodes-Bot/assets/75509898/0252d3e6-21c3-4b0f-b821-d5123ab8e716)
    - The only two models supported are the following.
      - [vosk-model-en-us-0.22-lgraph](https://alphacephei.com/vosk/models#:~:text=vosk%2Dmodel%2Den%2Dus%2D0.22%2Dlgraph), Faster bootup, but provides less accuracy. If having trouble, try using the next model.
      - [vosk-model-en-us-0.22](https://alphacephei.com/vosk/models#:~:text=Apache%202.0-,vosk%2Dmodel%2Den%2Dus%2D0.22,-1.8G), Provides more accuracy, but initial bootup takes longer and takes up much more space.
