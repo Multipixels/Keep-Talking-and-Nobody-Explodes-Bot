@@ -73,6 +73,9 @@ def listening():
     elif exists("vosk-model-en-us-0.22-lgraph"):
         model = Model(r"vosk-model-en-us-0.22-lgraph")
     else:
+        sleep(1)
+        from window import ttsText
+        ttsText("Error, can't find model")
         raise Exception("Error, can't find model")
     recognizer = KaldiRecognizer(model, 16000)
 
